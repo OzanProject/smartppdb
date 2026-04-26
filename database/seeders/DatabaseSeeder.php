@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             DemoSeeder::class,
             LandingPageSeeder::class,
             PaymentSettingSeeder::class,
+            LandingSettingSeeder::class,
         ]);
     }
 }
