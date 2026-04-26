@@ -36,15 +36,15 @@
 
 ### 1. Central Control (Super Admin)
 *Pusat pengelolaan sekolah, paket harga, dan monitoring infrastruktur.*
-![Super Admin Dashboard](docs/img/dashboard_super.png)
+![alt text](image-1.png)
 
 ### 2. School Management (Admin Sekolah)
 *Ruang kerja sekolah untuk mengelola gelombang, seleksi siswa, dan landing page.*
-![School Admin Dashboard](docs/img/dashboard_admin.png)
+![alt text](image.png)
 
 ### 3. Applicant Portal (Pendaftar)
 *Interface modern dan intuitif untuk calon siswa melengkapi pendaftaran.*
-![Applicant Dashboard](docs/img/dashboard_pendaftar.png)
+![alt text](image-2.png)
 
 </details>
 
