@@ -1,63 +1,66 @@
-# PPDB Pro - SaaS Penerimaan Peserta Didik Baru Online
+# PPDB Pro: Next-Gen SaaS Admission System
 
-[![Laravel](https://img.shields.io/badge/Laravel-11.x-red.svg)](https://laravel.com)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Development](https://img.shields.io/badge/status-active-success.svg)](https://ozanproject.site)
-
-**PPDB Pro** adalah platform *Software as a Service* (SaaS) mutakhir yang dirancang untuk mendigitalisasi proses penerimaan siswa baru secara masif dan terintegrasi. Platform ini memungkinkan setiap instansi sekolah untuk memiliki portal pendaftaran mandiri dengan fitur kustomisasi formulir pendaftaran, manajemen zona waktu, dan sistem langganan paket harga yang dikelola secara terpusat oleh Super Admin.
-
-🔗 **Demo Live:** [ozanproject.site](https://ozanproject.site)
-🔗 **Repository:** [github.com/OzanProject/smartppdb](https://github.com/OzanProject/smartppdb.git)
-
----
-
-## 🚀 Fitur Unggulan
-
-### 1. Multi-Tenancy Architecture
-Satu instalasi aplikasi dapat melayani ribuan sekolah dengan isolasi data yang aman. Setiap sekolah memiliki subdomain/slug unik dan database operasional yang terpisah secara logika.
-
-### 2. Dynamic Form Builder
-Admin Sekolah dapat membangun formulir pendaftaran mereka sendiri (Drag & Drop Logic) tanpa bantuan developer. Mendukung berbagai tipe input seperti teks, pilihan ganda, hingga unggah dokumen.
-
-### 3. Subscription & Monetization System
-Super Admin dapat mengelola paket harga (Pricing Plans) dengan kontrol penuh terhadap:
-*   **Hak Akses Modul:** Mengaktifkan/menonaktifkan fitur tertentu per paket.
-*   **Kuota Pendaftar:** Batasan jumlah siswa yang boleh mendaftar per sekolah.
-*   **Billing Cycle:** Dukungan pembayaran Bulanan, Tahunan, atau Sekali Bayar.
-
-### 4. Multi-Timezone Management
-Sistem mendukung perbedaan waktu Indonesia (WIB, WITA, WIT) yang dapat diatur secara spesifik per sekolah agar stempel waktu pendaftaran dan log aktivitas tetap akurat sesuai lokasi sekolah.
+<p align="center">
+  <b>Solusi Manajemen Penerimaan Siswa Baru Berbasis SaaS untuk Skala Nasional</b>
+  <br>
+  <a href="https://ozanproject.site"><strong>Explore the Demo »</strong></a>
+  <br>
+  <br>
+  <img src="https://img.shields.io/badge/Laravel-11.x-red?style=for-the-badge&logo=laravel" alt="Laravel">
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JS">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+</p>
 
 ---
 
-## 🖼️ Tampilan Antarmuka (Previews)
+## 📖 Tentang Proyek
 
-### Dashboard Super Admin
-*Pusat kendali seluruh sekolah, manajemen paket harga, dan statistik pendapatan platform.*
-![Dashboard Super Admin](Screenshot 2026-04-26 152552.png)
+**PPDB Pro** adalah platform *multi-tenant* yang memungkinkan ribuan sekolah mengelola proses pendaftaran siswa baru secara mandiri dalam satu infrastruktur cloud. Dibangun dengan fokus pada efisiensi, skalabilitas, dan kemudahan penggunaan bagi admin sekolah maupun orang tua siswa.
 
-### Dashboard Admin Sekolah
-*Ruang kerja untuk sekolah mengelola calon siswa, konfigurasi gelombang, dan pengaturan formulir.*
-![Dashboard Admin Sekolah](Screenshot 2026-04-26 152558.png)
+### 🌟 Fitur Utama (Core Value)
 
-### Dashboard Pendaftar (Siswa)
-*Portal bagi calon siswa untuk melengkapi berkas, melihat status pengumuman, dan mencetak bukti daftar.*
-![Dashboard Pendaftar](https://via.placeholder.com/1200x600/27ae60/ffffff?text=Preview+Dashboard+Pendaftar)
+*   **⚡ Dashboard Real-Time**: Pantau statistik pendaftaran, kuota, dan pendapatan secara instan.
+*   **🛠️ Dynamic Form Engine**: Sesuaikan formulir pendaftaran per sekolah tanpa kode.
+*   **🌍 Multi-Timezone Adaptive**: Sinkronisasi otomatis waktu WIB/WITA/WIT berdasarkan lokasi sekolah.
+*   **💰 SaaS Billing System**: Manajemen paket harga otomatis dengan sistem *trial* dan aktivasi lisensi.
+*   **🔒 Data Isolation**: Keamanan data antar tenant (sekolah) terjamin dengan proteksi tingkat basis data.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## 📸 Tampilan Dashboard
 
-*   **Core:** [Laravel 11](https://laravel.com)
-*   **Frontend:** HTML5, CSS3, Vanilla JavaScript (Modern UI Architecture)
-*   **Database:** MySQL
-*   **Styling:** AdminLTE 3 & Custom Premium CSS Components
-*   **Alerts:** SweetAlert2
-*   **Icons:** FontAwesome 6
+<details>
+<summary><b>Klik untuk melihat Screenshot Dashboard</b></summary>
+<br>
+
+### 1. Central Control (Super Admin)
+*Pusat pengelolaan sekolah, paket harga, dan monitoring infrastruktur.*
+![Super Admin Dashboard](docs/img/dashboard_super.png)
+
+### 2. School Management (Admin Sekolah)
+*Ruang kerja sekolah untuk mengelola gelombang, seleksi siswa, dan landing page.*
+![School Admin Dashboard](docs/img/dashboard_admin.png)
+
+### 3. Applicant Portal (Pendaftar)
+*Interface modern dan intuitif untuk calon siswa melengkapi pendaftaran.*
+![Applicant Dashboard](docs/img/dashboard_pendaftar.png)
+
+</details>
 
 ---
 
-## 📊 Dokumentasi Teknis
+## 🔄 Alur Kerja Sistem (Workflow)
+
+1.  **Pendaftaran SaaS**: Sekolah mendaftar dan memilih paket (atau memulai *free trial*).
+2.  **Konfigurasi**: Admin Sekolah mengatur tahun ajaran, gelombang pendaftaran, dan kustomisasi formulir.
+3.  **Publikasi**: Landing page sekolah otomatis aktif di subdomain/slug yang dipilih.
+4.  **Pendaftaran Siswa**: Calon siswa mendaftar, mengunggah berkas, dan memantau status secara real-time.
+5.  **Verifikasi & Seleksi**: Sekolah memverifikasi berkas dan menentukan status kelulusan siswa.
+
+---
+
+## 📊 Arsitektur Basis Data
 
 ### Entity Relationship Diagram (ERD)
 
@@ -69,69 +72,40 @@ erDiagram
     School ||--o{ FormSection : "configures"
     School ||--o{ AdmissionBatch : "opens"
     School ||--o{ Registration : "receives"
-    School ||--o{ Subscription : "subscribes"
-    
     PricingPlan ||--o{ Subscription : "billed_as"
-    
     User ||--o{ Registration : "owns"
-    User ||--o{ Subscription : "confirms"
-    
-    FormSection ||--o{ FormField : "contains"
-    
-    AdmissionBatch ||--o{ Registration : "collects"
-    AcademicYear ||--o{ AdmissionBatch : "contains"
-    
     Registration ||--o{ Document : "submits"
 ```
 
-### Logical Schema (LS) Utama
-1.  **pricing_plans**: `id, name, price, billing_cycle, allowed_modules (JSON), max_quota, trial_days`
-2.  **schools**: `id, name, slug, npsn, pricing_plan_id (FK), timezone, is_active, trial_ends_at`
-3.  **users**: `id, name, email, password, role (superadmin, admin_school, staff, applicant), school_id (FK)`
-4.  **registrations**: `id, registration_number, user_id (FK), school_id (FK), personal_data (JSON), status`
-5.  **form_fields**: `id, form_section_id (FK), label, type, name, options (JSON), is_required`
+---
+
+## 🚀 Instalasi Cepat
+
+```bash
+# Clone
+git clone https://github.com/OzanProject/smartppdb.git
+
+# Install
+composer install
+npm install && npm run build
+
+# Setup
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+```
 
 ---
 
-## ⚙️ Panduan Instalasi Lokal
+## 🤝 Kontribusi & Dukungan
 
-1.  **Clone Repository:**
-    ```bash
-    git clone https://github.com/OzanProject/smartppdb.git
-    cd smartppdb
-    ```
+Kontribusi selalu terbuka! Silakan lakukan **Fork**, buat **Branch**, dan ajukan **Pull Request**.
 
-2.  **Instalasi Dependensi:**
-    ```bash
-    composer install
-    npm install && npm run dev
-    ```
-
-3.  **Konfigurasi Lingkungan:**
-    ```bash
-    cp .env.example .env
-    php artisan key:generate
-    ```
-
-4.  **Migrasi & Database Seeding:**
-    ```bash
-    php artisan migrate --seed
-    ```
-
-5.  **Jalankan Aplikasi:**
-    ```bash
-    php artisan serve
-    ```
-
----
-
-## 📧 Kontak & Kontribusi
-
-Jika Anda menemukan bug atau ingin berkontribusi dalam pengembangan, silakan hubungi pengembang utama:
-
-*   **Ozan Project**
+*   **Developer:** Ozan Project
 *   **Website:** [ozanproject.site](https://ozanproject.site)
 *   **GitHub:** [@OzanProject](https://github.com/OzanProject)
 
 ---
-*© 2024 PPDB Pro - Solusi Digital untuk Pendidikan Indonesia.*
+<p align="center">
+  <i>"PPDB Pro - Menghubungkan Pendidikan dengan Teknologi Masa Depan."</i>
+</p>
