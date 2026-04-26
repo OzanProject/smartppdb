@@ -32,6 +32,7 @@ class LandingSettingSeeder extends Seeder
             ['group' => 'Hero', 'key' => 'hero_title', 'value' => 'Masih Ribet Urus PPDB Manual?'],
             ['group' => 'Hero', 'key' => 'hero_description', 'value' => 'Form kertas hilang, data berantakan, atau orang tua bingung daftar? Saatnya upgrade ke sistem PPDB online yang rapi, cepat, dan profesional.'],
             ['group' => 'Hero', 'key' => 'hero_cta', 'value' => '🚀 Mulai Digital Sekarang'],
+            ['group' => 'Hero', 'key' => 'hero_video_url', 'value' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'],
             
             // PRICING
             ['group' => 'Pricing', 'key' => 'pricing_title', 'value' => 'Investasi Terbaik'],
@@ -66,6 +67,10 @@ class LandingSettingSeeder extends Seeder
             ['group' => 'Testimonial', 'key' => 'testimonial_quote', 'value' => 'Sejak kami beralih ke PPDB Pro, proses pendaftaran siswa baru menjadi jauh lebih cepat, rapi, dan terukur. Orang tua siswa juga sangat terbantu karena bisa mendaftar dari rumah.'],
             ['group' => 'Testimonial', 'key' => 'testimonial_author', 'value' => 'Haji Syarifuddin'],
             ['group' => 'Testimonial', 'key' => 'testimonial_role', 'value' => 'Kepala Sekolah, Islamic School Jakarta'],
+
+            // SEO SECTION
+            ['group' => 'SEO', 'key' => 'seo_description', 'value' => 'Sistem Informasi PPDB Online SaaS terbaik untuk manajemen pendaftaran siswa baru yang efisien dan profesional.'],
+            ['group' => 'SEO', 'key' => 'seo_keywords', 'value' => 'ppdb online, saas ppdb, aplikasi pendaftaran sekolah, sistem informasi sekolah'],
         ];
 
         foreach ($settings as $setting) {

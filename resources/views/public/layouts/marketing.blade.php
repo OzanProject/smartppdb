@@ -24,7 +24,16 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ url()->current() }}">
 
-    <title>@yield('title', 'Beranda') | {{ $landingSettings['app_name'] ?? 'PPDB Pro' }}</title>
+    <title>@yield('title') | {{ $landingSettings['app_name'] ?? 'PPDB PRO' }}</title>
+
+    <!-- Meta Tags for SEO & Social Sharing -->
+    <meta name="description" content="{{ $landingSettings['seo_description'] ?? ($landingSettings['app_slogan'] ?? 'Platform PPDB Digital Terpadu') }}">
+    <meta property="og:title" content="{{ $landingSettings['app_name'] ?? 'PPDB PRO' }} - {{ $landingSettings['app_slogan'] ?? 'Platform PPDB Digital Terpadu' }}">
+    <meta property="og:description" content="{{ $landingSettings['seo_description'] ?? 'Kelola pendaftaran siswa baru lebih mudah, cepat, dan profesional.' }}">
+    <meta property="og:image" content="{{ isset($landingSettings['app_logo']) && $landingSettings['app_logo'] ? asset('storage/' . $landingSettings['app_logo']) : asset('saas_hero_dashboard_1776911874930.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
