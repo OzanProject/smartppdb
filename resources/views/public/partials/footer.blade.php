@@ -106,7 +106,7 @@
                         <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 flex-shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition-all">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <p class="text-slate-500 text-sm font-bold">{{ $landingSettings['app_phone'] }}</p>
+                        <a href="tel:{{ preg_replace('/[^0-9+]/', '', $landingSettings['app_phone']) }}" class="text-slate-500 text-sm font-bold hover:text-indigo-600 transition-colors">{{ $landingSettings['app_phone'] }}</a>
                     </div>
                 @endif
                 @if(!empty($landingSettings['app_email']))

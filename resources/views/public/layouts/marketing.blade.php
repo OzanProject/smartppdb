@@ -141,7 +141,14 @@
 
     @include('public.partials.footer')
 
-    @if(!empty($landingSettings['app_phone']))
+    @php
+        $whatsappNumber = preg_replace('/[^0-9]/', '', $landingSettings['app_phone'] ?? '');
+        if (str_starts_with($whatsappNumber, '0')) {
+            $whatsappNumber = '62' . substr($whatsappNumber, 1);
+        }
+    @endphp
+
+    @if($whatsappNumber)
         <!-- Floating Action Buttons -->
         <div class="fixed bottom-8 right-8 z-[99] flex flex-col gap-4 items-end" x-data="{ showScrollTop: false }" @scroll.window="showScrollTop = (window.pageYOffset > 500)">
             
@@ -160,7 +167,7 @@
             </button>
 
             <!-- Floating Customer Service (WhatsApp) -->
-            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $landingSettings['app_phone']) }}?text=Halo%20Admin%20PPDB%20PRO,%20saya%20ingin%20bertanya..." 
+            <a href="https://wa.me/{{ $whatsappNumber }}?text=Halo%20Admin%20{{ $landingSettings['app_name'] ?? 'PPDB PRO' }},%20saya%20ingin%20bertanya..." 
                target="_blank"
                class="group flex items-center gap-3">
                 

@@ -32,7 +32,7 @@
                         </div>
                         <div>
                             <div class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">WhatsApp / Telepon</div>
-                            <div class="text-slate-900 text-lg font-bold">{{ $landingSettings['app_phone'] }}</div>
+                            <a href="tel:{{ preg_replace('/[^0-9+]/', '', $landingSettings['app_phone']) }}" class="text-slate-900 text-lg font-bold hover:text-indigo-600 transition-colors">{{ $landingSettings['app_phone'] }}</a>
                         </div>
                     </div>
                     @endif

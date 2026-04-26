@@ -22,10 +22,22 @@ class LandingSettingSeeder extends Seeder
             ['group' => 'Contact', 'key' => 'app_phone', 'value' => '021-12345678'],
             ['group' => 'Contact', 'key' => 'app_address', 'value' => 'Jl. Pendidikan No. 123, Jakarta Selatan, Indonesia'],
             
-            // SOCIAL MEDIA
-            ['group' => 'Social', 'key' => 'app_facebook', 'value' => 'https://facebook.com/ppdbpro'],
-            ['group' => 'Social', 'key' => 'app_instagram', 'value' => 'https://instagram.com/ppdbpro'],
-            ['group' => 'Social', 'key' => 'app_youtube', 'value' => 'https://youtube.com/ppdbpro'],
+            // SOSMED (SOCIAL MEDIA)
+            ['group' => 'Sosmed', 'key' => 'app_facebook', 'value' => 'https://facebook.com/ppdbpro'],
+            ['group' => 'Sosmed', 'key' => 'app_instagram', 'value' => 'https://instagram.com/ppdbpro'],
+            ['group' => 'Sosmed', 'key' => 'app_youtube', 'value' => 'https://youtube.com/ppdbpro'],
+            ['group' => 'Sosmed', 'key' => 'app_x', 'value' => 'https://x.com/ppdbpro'],
+            ['group' => 'Sosmed', 'key' => 'app_tiktok', 'value' => 'https://tiktok.com/@ppdbpro'],
+            ['group' => 'Sosmed', 'key' => 'app_linkedin', 'value' => 'https://linkedin.com/company/ppdbpro'],
+
+            // FAQ SECTION
+            ['group' => 'FAQ', 'key' => 'faq_title', 'value' => 'Pertanyaan Umum'],
+            ['group' => 'FAQ', 'key' => 'faq_subtitle', 'value' => 'Temukan jawaban cepat untuk pertanyaan yang sering diajukan seputar layanan kami.'],
+            
+            // FOOTER SETTINGS
+            ['group' => 'Footer', 'key' => 'footer_solusi_title', 'value' => 'Solusi'],
+            ['group' => 'Footer', 'key' => 'footer_perusahaan_title', 'value' => 'Perusahaan'],
+            ['group' => 'Footer', 'key' => 'footer_text', 'value' => '© 2026 PPDB PRO Platform. All rights reserved.'],
 
             // HERO SECTION
             ['group' => 'Hero', 'key' => 'hero_badge', 'value' => 'Solusi PPDB Sekolah Modern'],
@@ -71,6 +83,10 @@ class LandingSettingSeeder extends Seeder
             // SEO SECTION
             ['group' => 'SEO', 'key' => 'seo_description', 'value' => 'Sistem Informasi PPDB Online SaaS terbaik untuk manajemen pendaftaran siswa baru yang efisien dan profesional.'],
             ['group' => 'SEO', 'key' => 'seo_keywords', 'value' => 'ppdb online, saas ppdb, aplikasi pendaftaran sekolah, sistem informasi sekolah'],
+            ['group' => 'SEO', 'key' => 'seo_meta_description', 'value' => 'Sistem Informasi PPDB Online SaaS terbaik untuk manajemen pendaftaran siswa baru.'],
+            ['group' => 'SEO', 'key' => 'seo_meta_keywords', 'value' => 'ppdb online, saas ppdb, aplikasi pendaftaran sekolah'],
+            ['group' => 'SEO', 'key' => 'seo_og_title', 'value' => 'PPDB PRO - Solusi PPDB Digital'],
+            ['group' => 'SEO', 'key' => 'seo_og_description', 'value' => 'Kelola pendaftaran siswa baru lebih mudah, cepat, dan profesional.'],
         ];
 
         foreach ($settings as $setting) {
