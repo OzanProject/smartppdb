@@ -34,11 +34,11 @@ Sistem mendukung perbedaan waktu Indonesia (WIB, WITA, WIT) yang dapat diatur se
 
 ### Dashboard Super Admin
 *Pusat kendali seluruh sekolah, manajemen paket harga, dan statistik pendapatan platform.*
-![Dashboard Super Admin](https://via.placeholder.com/1200x600/2c3e50/ffffff?text=Preview+Dashboard+Super+Admin)
+![Dashboard Super Admin](Screenshot 2026-04-26 152552.png)
 
 ### Dashboard Admin Sekolah
 *Ruang kerja untuk sekolah mengelola calon siswa, konfigurasi gelombang, dan pengaturan formulir.*
-![Dashboard Admin Sekolah](https://via.placeholder.com/1200x600/3498db/ffffff?text=Preview+Dashboard+Admin+Sekolah)
+![Dashboard Admin Sekolah](Screenshot 2026-04-26 152558.png)
 
 ### Dashboard Pendaftar (Siswa)
 *Portal bagi calon siswa untuk melengkapi berkas, melihat status pengumuman, dan mencetak bukti daftar.*
