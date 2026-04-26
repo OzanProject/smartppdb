@@ -50,7 +50,15 @@ class LandingSettingController extends Controller
             }
         }
 
-        // Handle file uploads (logo, favicon)
+        if ($request->has('delete_seo_og_image')) {
+            $setting = LandingSetting::where('key', 'seo_og_image')->first();
+            if ($setting && $setting->value) {
+                \Illuminate\Support\Facades\Storage::disk('public')->delete($setting->value);
+                $setting->update(['value' => null]);
+            }
+        }
+
+        // Handle file uploads (logo, favicon, og_image)
         if ($request->hasFile('app_logo')) {
             $path = $request->file('app_logo')->store('landing', 'public');
             LandingSetting::where('key', 'app_logo')->update(['value' => $path]);
@@ -59,6 +67,11 @@ class LandingSettingController extends Controller
         if ($request->hasFile('app_favicon')) {
             $path = $request->file('app_favicon')->store('landing', 'public');
             LandingSetting::where('key', 'app_favicon')->update(['value' => $path]);
+        }
+
+        if ($request->hasFile('seo_og_image')) {
+            $path = $request->file('seo_og_image')->store('landing', 'public');
+            LandingSetting::where('key', 'seo_og_image')->update(['value' => $path]);
         }
 
         return redirect()->back()->with('success', 'Landing page settings updated successfully!');

@@ -87,6 +87,7 @@ class LandingSettingSeeder extends Seeder
             ['group' => 'SEO', 'key' => 'seo_meta_keywords', 'value' => 'ppdb online, saas ppdb, aplikasi pendaftaran sekolah'],
             ['group' => 'SEO', 'key' => 'seo_og_title', 'value' => 'PPDB PRO - Solusi PPDB Digital'],
             ['group' => 'SEO', 'key' => 'seo_og_description', 'value' => 'Kelola pendaftaran siswa baru lebih mudah, cepat, dan profesional.'],
+            ['group' => 'SEO', 'key' => 'seo_og_image', 'value' => ''],
         ];
 
         foreach ($settings as $setting) {

@@ -6,35 +6,35 @@
     <meta name="description" content="{{ $landingSettings['seo_meta_description'] ?? 'Platform SaaS pendaftaran sekolah online terbaik di Indonesia.' }}">
     <meta name="keywords" content="{{ $landingSettings['seo_meta_keywords'] ?? 'PPDB Online, Pendaftaran Sekolah, PPDB PRO' }}">
     <meta name="author" content="{{ $landingSettings['app_name'] ?? 'PPDB PRO' }}">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:title" content="{{ $landingSettings['seo_og_title'] ?? ($landingSettings['app_name'] ?? 'PPDB PRO') }}">
     <meta property="og:description" content="{{ $landingSettings['seo_og_description'] ?? 'Solusi digital pendaftaran sekolah Anda.' }}">
-    <meta property="og:image" content="{{ !empty($landingSettings['app_logo']) ? asset('storage/' . $landingSettings['app_logo']) : asset('logo_placeholder.png') }}">
+    @php
+        $ogImage = !empty($landingSettings['seo_og_image']) 
+            ? asset('storage/' . $landingSettings['seo_og_image']) 
+            : (!empty($landingSettings['app_logo']) 
+                ? asset('storage/' . $landingSettings['app_logo']) 
+                : asset('logo_placeholder.png'));
+    @endphp
+    <meta property="og:image" content="{{ $ogImage }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
     <meta property="twitter:title" content="{{ $landingSettings['seo_og_title'] ?? ($landingSettings['app_name'] ?? 'PPDB PRO') }}">
     <meta property="twitter:description" content="{{ $landingSettings['seo_og_description'] ?? 'Solusi digital pendaftaran sekolah Anda.' }}">
-    <meta property="twitter:image" content="{{ !empty($landingSettings['app_logo']) ? asset('storage/' . $landingSettings['app_logo']) : asset('logo_placeholder.png') }}">
+    <meta property="twitter:image" content="{{ $ogImage }}">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ url()->current() }}">
 
     <title>@yield('title') | {{ $landingSettings['app_name'] ?? 'PPDB PRO' }}</title>
 
-    <!-- Meta Tags for SEO & Social Sharing -->
-    <meta name="description" content="{{ $landingSettings['seo_description'] ?? ($landingSettings['app_slogan'] ?? 'Platform PPDB Digital Terpadu') }}">
-    <meta property="og:title" content="{{ $landingSettings['app_name'] ?? 'PPDB PRO' }} - {{ $landingSettings['app_slogan'] ?? 'Platform PPDB Digital Terpadu' }}">
-    <meta property="og:description" content="{{ $landingSettings['seo_description'] ?? 'Kelola pendaftaran siswa baru lebih mudah, cepat, dan profesional.' }}">
-    <meta property="og:image" content="{{ isset($landingSettings['app_logo']) && $landingSettings['app_logo'] ? asset('storage/' . $landingSettings['app_logo']) : asset('saas_hero_dashboard_1776911874930.png') }}">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {

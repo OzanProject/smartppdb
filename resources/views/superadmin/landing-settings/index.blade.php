@@ -258,6 +258,21 @@
                                                 </div>
                                             </div>
 
+                                        @elseif($setting->key == 'seo_og_image')
+                                            <div class="d-flex align-items-center bg-light p-3 rounded-xl border">
+                                                @if($setting->value)
+                                                    <img src="{{ asset('storage/' . $setting->value) }}" class="upload-preview" style="width: 120px; height: 60px; object-fit: cover;">
+                                                    <div class="custom-control custom-checkbox mr-4">
+                                                        <input type="checkbox" class="custom-control-input" id="deleteOgImage" name="delete_seo_og_image" value="1">
+                                                        <label class="custom-control-label text-danger font-weight-bold" for="deleteOgImage" style="text-transform: none; letter-spacing: 0;">Hapus Gambar</label>
+                                                    </div>
+                                                @endif
+                                                <div class="custom-file flex-1">
+                                                    <input type="file" name="seo_og_image" class="custom-file-input" id="ogImageFile">
+                                                    <label class="custom-file-label" for="ogImageFile">Upload Social Share Image (1200x630)...</label>
+                                                </div>
+                                            </div>
+
                                         @elseif(Str::contains($setting->key, ['content', 'description', 'address', 'quote', 'desc', 'footer_text', 'instructions']))
                                             <textarea name="settings[{{ $setting->key }}]" class="form-control" rows="4" placeholder="Masukkan {{ str_replace('_', ' ', $setting->key) }}...">{{ $setting->value }}</textarea>
 
