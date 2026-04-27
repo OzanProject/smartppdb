@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         // PROTECTION: Only fetch admin_school and staff roles belonging to the current admin's school
         $users = User::where('school_id', auth()->user()->school_id)
-            ->whereIn('role', ['admin_school', 'staff'])
+            ->whereIn('role', ['admin_school', 'staff', 'applicant'])
             ->orderBy('name')
             ->get();
 
@@ -72,8 +72,8 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user): RedirectResponse
     {
-        // PROTECTION: Ensure the user belongs to the same school and is a staff/admin
-        if ($user->school_id !== auth()->user()->school_id || !in_array($user->role, ['admin_school', 'staff'])) {
+        // PROTECTION: Ensure the user belongs to the same school and has a valid role
+        if ($user->school_id !== auth()->user()->school_id || !in_array($user->role, ['admin_school', 'staff', 'applicant'])) {
             abort(403, 'Anda tidak diizinkan mengubah pengguna ini.');
         }
         
@@ -81,7 +81,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'phone' => 'nullable|string|max:20',
-            'role' => 'required|string|in:admin_school,staff',
+            'role' => 'required|string|in:admin_school,staff,applicant',
             'password' => 'nullable|string|min:8|confirmed',
         ]);
 
@@ -106,8 +106,8 @@ class UserController extends Controller
      */
     public function destroy(Request $request, User $user): RedirectResponse
     {
-        // PROTECTION: Ensure the user belongs to the same school
-        if ($user->school_id !== auth()->user()->school_id || !in_array($user->role, ['admin_school', 'staff'])) {
+        // PROTECTION: Ensure the user belongs to the same school and has a valid role
+        if ($user->school_id !== auth()->user()->school_id || !in_array($user->role, ['admin_school', 'staff', 'applicant'])) {
             abort(403, 'Anda tidak diizinkan menghapus pengguna ini.');
         }
         
