@@ -19,7 +19,9 @@ Route::middleware(['auth', 'role:superadmin'])->prefix('superadmin')->name('supe
     Route::post('schools/{school}/toggle-status', [SchoolController::class, 'toggleStatus'])->name('schools.toggle-status');
 
     // Admin User Management
-    Route::resource('admin-users', AdminUserController::class);
+    Route::resource('admin-users', AdminUserController::class)->parameters([
+        'admin-users' => 'user'
+    ]);
 
     // Pricing & Features Management
     Route::resource('pricing-plans', PricingPlanController::class);

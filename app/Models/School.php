@@ -10,6 +10,18 @@ class School extends Model
 {
     use HasFactory;
 
+    protected static function booted()
+    {
+        static::deleting(function ($school) {
+            $school->users()->delete();
+            $school->academicYears()->delete();
+            $school->formSections()->delete();
+            $school->documentRequirements()->delete();
+            $school->admissionBatches()->delete();
+            $school->registrations()->delete();
+        });
+    }
+
     protected $fillable = [
         'name',
         'slug',
