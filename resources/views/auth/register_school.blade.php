@@ -52,10 +52,14 @@
             </div>
 
             <!-- Payment Logos -->
-            <div class="mt-12 flex items-center gap-6 opacity-40">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dan_Nama_BCA.svg" alt="BCA" class="h-5">
-                <img src="https://upload.wikimedia.org/wikipedia/id/f/fa/Bank_Mandiri_logo.svg" alt="Mandiri" class="h-5">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_Midtrans.png" alt="Midtrans" class="h-5">
+            <div class="mt-12">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Didukung Oleh</p>
+                <div class="flex items-center gap-3">
+                    <div class="h-8 px-3 bg-white rounded-lg border border-slate-200 flex items-center justify-center font-black text-blue-900 text-sm shadow-sm">BCA</div>
+                    <div class="h-8 px-3 bg-white rounded-lg border border-slate-200 flex items-center justify-center font-black text-amber-500 text-sm shadow-sm italic">Mandiri</div>
+                    <div class="h-8 px-3 bg-white rounded-lg border border-slate-200 flex items-center justify-center font-black text-red-500 text-sm shadow-sm">QRIS</div>
+                    <div class="h-8 px-3 bg-slate-800 rounded-lg border border-slate-700 flex items-center justify-center font-bold text-white text-sm shadow-sm tracking-wide">midtrans</div>
+                </div>
             </div>
         </div>
 
