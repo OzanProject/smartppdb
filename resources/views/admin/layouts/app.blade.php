@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield('title', 'Admin Panel') | {{ auth()->user()->school->name ?? ($landingSettings['app_name'] ?? 'PPDB PRO') }}</title>
+  <title>@yield('title', 'Admin Panel') | {{ $landingSettings['app_name'] ?? 'PPDB PRO' }}</title>
   @if(!empty($landingSettings['app_favicon']))
     <link rel="icon" type="image/png" href="{{ asset('storage/' . $landingSettings['app_favicon']) }}">
   @endif
