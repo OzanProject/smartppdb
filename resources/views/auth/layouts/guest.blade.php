@@ -78,23 +78,43 @@
                     <span class="text-3xl font-black text-white tracking-tighter">{{ isset($school) ? $school->name : ($landingSettings['app_name'] ?? 'PPDB PRO') }}</span>
                 </a>
                 
-                <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
-                    Masa Depan <br> <span class="text-indigo-200">Pendaftaran Sekolah</span> <br> Mulai dari Sini.
-                </h2>
-                <p class="text-indigo-100 text-lg leading-relaxed mb-8 opacity-90">
-                    Sistem pendaftaran online yang modern, aman, dan mempermudah administrasi sekolah Anda hanya dalam genggaman.
-                </p>
-                
-                <div class="grid grid-cols-2 gap-6 mt-12">
-                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-[2rem] border border-white/10 shadow-xl">
-                        <div class="text-2xl font-bold text-white mb-1">100%</div>
-                        <div class="text-indigo-200 text-xs font-bold uppercase tracking-widest">Online & Paperless</div>
+                @if(isset($school))
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+                        Selamat Datang di <br> <span class="text-indigo-200">PPDB Online</span> <br> {{ $school->name }}.
+                    </h2>
+                    <p class="text-indigo-100 text-lg leading-relaxed mb-8 opacity-90">
+                        Silakan buat akun atau masuk untuk melanjutkan proses pendaftaran peserta didik baru.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-12">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-[2rem] border border-white/10 shadow-xl">
+                            <div class="text-2xl font-bold text-white mb-1">Cepat</div>
+                            <div class="text-indigo-200 text-xs font-bold uppercase tracking-widest">Pendaftaran Mudah</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-[2rem] border border-white/10 shadow-xl">
+                            <div class="text-2xl font-bold text-white mb-1">Aman</div>
+                            <div class="text-indigo-200 text-xs font-bold uppercase tracking-widest">Data Terjamin</div>
+                        </div>
                     </div>
-                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-[2rem] border border-white/10 shadow-xl">
-                        <div class="text-2xl font-bold text-white mb-1">24/7</div>
-                        <div class="text-indigo-200 text-xs font-bold uppercase tracking-widest">Akses Tanpa Batas</div>
+                @else
+                    <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+                        Masa Depan <br> <span class="text-indigo-200">Pendaftaran Sekolah</span> <br> Mulai dari Sini.
+                    </h2>
+                    <p class="text-indigo-100 text-lg leading-relaxed mb-8 opacity-90">
+                        Sistem pendaftaran online yang modern, aman, dan mempermudah administrasi sekolah Anda hanya dalam genggaman.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-12">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-[2rem] border border-white/10 shadow-xl">
+                            <div class="text-2xl font-bold text-white mb-1">100%</div>
+                            <div class="text-indigo-200 text-xs font-bold uppercase tracking-widest">Online & Paperless</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-[2rem] border border-white/10 shadow-xl">
+                            <div class="text-2xl font-bold text-white mb-1">24/7</div>
+                            <div class="text-indigo-200 text-xs font-bold uppercase tracking-widest">Akses Tanpa Batas</div>
+                        </div>
                     </div>
-                </div>
+                @endif
             </div>
         </div>
 

@@ -19,10 +19,15 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(Request $request): \Illuminate\View\View
+    public function create(Request $request)
     {
         $schoolSlug = $request->query('school');
-        $school = $schoolSlug ? \App\Models\School::where('slug', $schoolSlug)->first() : null;
+        
+        if (!$schoolSlug) {
+            return redirect()->route('school.register');
+        }
+
+        $school = \App\Models\School::where('slug', $schoolSlug)->firstOrFail();
         
         return view('auth.register', compact('school'));
     }
