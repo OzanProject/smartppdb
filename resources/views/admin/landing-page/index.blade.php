@@ -303,3 +303,38 @@
     .table-valign-middle td { vertical-align: middle !important; }
 </style>
 @endpush
+
+@push('scripts')
+<script>
+    $(document).ready(function() {
+        // 1. Retain active tab on page reload
+        $('a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+            localStorage.setItem('activeLandingTab', $(e.target).attr('href'));
+        });
+
+        let activeTab = localStorage.getItem('activeLandingTab');
+        if (activeTab) {
+            $('.nav-tabs a[href="' + activeTab + '"]').tab('show');
+        }
+
+        // 2. Track changes in Hero form to prevent accidental data loss
+        let heroFormChanged = false;
+        $('#hero form input, #hero form textarea').on('change input', function() {
+            heroFormChanged = true;
+        });
+
+        $('#hero form').on('submit', function() {
+            heroFormChanged = false;
+        });
+
+        // Warn before switching tabs if Hero form is unsaved
+        $('a[data-toggle="pill"]').on('hide.bs.tab', function (e) {
+            if ($(e.target).attr('href') === '#hero' && heroFormChanged) {
+                if (!confirm('Anda memiliki perubahan di "Hero & Statistik" yang belum disimpan. Yakin ingin pindah tab tanpa menyimpan?')) {
+                    e.preventDefault();
+                }
+            }
+        });
+    });
+</script>
+@endpush
