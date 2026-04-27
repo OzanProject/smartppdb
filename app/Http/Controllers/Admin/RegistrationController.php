@@ -79,6 +79,11 @@ class RegistrationController extends Controller
             abort(403);
         }
 
+        // Delete the associated user account if exists
+        if ($registration->user) {
+            $registration->user->delete();
+        }
+
         $registration->delete();
 
         return redirect()->route('admin.registrations.index')
