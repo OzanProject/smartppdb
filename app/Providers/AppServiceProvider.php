@@ -38,6 +38,21 @@ class AppServiceProvider extends ServiceProvider
                 config(['app.timezone' => $settings['app_timezone']]);
                 date_default_timezone_set($settings['app_timezone']);
             }
+
+            // Global SMTP Configuration
+            $smtp = LandingSetting::where('group', 'SMTP')->pluck('value', 'key');
+            if ($smtp->isNotEmpty() && !empty($smtp['smtp_host'])) {
+                config([
+                    'mail.default' => 'smtp',
+                    'mail.mailers.smtp.host' => $smtp['smtp_host'],
+                    'mail.mailers.smtp.port' => (int) ($smtp['smtp_port'] ?? 587),
+                    'mail.mailers.smtp.encryption' => ($smtp['smtp_encryption'] ?? 'tls') === 'none' ? null : ($smtp['smtp_encryption'] ?? 'tls'),
+                    'mail.mailers.smtp.username' => $smtp['smtp_username'],
+                    'mail.mailers.smtp.password' => $smtp['smtp_password'],
+                    'mail.from.address' => $smtp['smtp_from_email'] ?? config('mail.from.address'),
+                    'mail.from.name' => $smtp['smtp_from_name'] ?? config('mail.from.name'),
+                ]);
+            }
         }
     }
 }

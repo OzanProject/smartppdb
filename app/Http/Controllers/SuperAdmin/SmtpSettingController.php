@@ -97,6 +97,9 @@ class SmtpSettingController extends Controller
         Config::set('mail.from.address', $smtp['smtp_from_email'] ?? 'noreply@ppdbpro.test');
         Config::set('mail.from.name', $smtp['smtp_from_name'] ?? 'PPDB Pro');
 
+        // Purge SMTP mailer to apply new config
+        Mail::purge('smtp');
+
         try {
             $appName = LandingSetting::where('key', 'app_name')->value('value') ?? 'PPDB Pro';
 
